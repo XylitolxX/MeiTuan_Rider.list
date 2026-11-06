@@ -1,34 +1,97 @@
 # NAME: MeiTuan_Rider
-# DESC: 美团 / 美团骑手（众包）常用直连规则
-# UPDATED: 2026-10-20
+# DESC: 美团 / 美团骑手 (专送/众包) 履约配送、实时定位、支付与音视频直连规则全集
+# UPDATED: 2026-11
 
+# ==================== 1. 美团核心系统与主站网关 ====================
+DOMAIN-KEYWORD,meituan
+DOMAIN-KEYWORD,sankuai
+DOMAIN-KEYWORD,dianping
 DOMAIN-SUFFIX,meituan.com
 DOMAIN-SUFFIX,meituan.net
 DOMAIN-SUFFIX,sankuai.com
+DOMAIN-SUFFIX,sankuai.net
 DOMAIN-SUFFIX,dianping.com
 DOMAIN-SUFFIX,dpfile.com
 DOMAIN-SUFFIX,51ping.com
 DOMAIN-SUFFIX,maoyan.com
-DOMAIN-SUFFIX,mtyun.com
 DOMAIN-SUFFIX,neixin.cn
 DOMAIN-SUFFIX,baobaoaichi.cn
 
+# ==================== 2. 美团配送履约、骑手端与本地生活业务 ====================
+# 美团外卖与大客户专网
+DOMAIN-SUFFIX,waimai.meituan.com
+DOMAIN-SUFFIX,banma.meituan.com
+# 美团买药 / 小象超市 (美团买菜) / 优选
+DOMAIN-SUFFIX,xiaoxiang.meituan.com
+DOMAIN-SUFFIX,youxuan.meituan.com
+# 钱袋宝 (美团官方支付与骑手资金结算牌照)
+DOMAIN-SUFFIX,qiandaibao.com
+DOMAIN-SUFFIX,qiandaibao.com.cn
+DOMAIN-SUFFIX,qian-dai.com
+# 美团金融与理财底层
+DOMAIN-SUFFIX,msxfin.com
+
+# ==================== 3. 美团云服务、CDN静态资源与移动长连接网关 ====================
+DOMAIN-SUFFIX,mtyun.com
+DOMAIN-SUFFIX,meituan.org
+DOMAIN-SUFFIX,meituangov.cn
+# 美团自研长连接通道与推送调度 (Shark/SharkNet 长连接底层)
+DOMAIN-SUFFIX,relay.meituan.com
+DOMAIN-SUFFIX,route.meituan.com
+DOMAIN-SUFFIX,push.meituan.com
+DOMAIN-SUFFIX,open.meituan.com
+DOMAIN-SUFFIX,api.mobile.meituan.com
+
+# ==================== 4. 地图定位、路径规划与导航渲染 (腾讯/高德底层) ====================
+# 腾讯地图 (美团骑手默认基础定位与路径算路)
 DOMAIN-SUFFIX,map.qq.com
+DOMAIN-SUFFIX,apis.map.qq.com
+DOMAIN-SUFFIX,vectorsdk.map.qq.com
+DOMAIN-SUFFIX,rtmap.com
+# 高德地图 (部分页面、导航及基站 WiFi 辅助定位)
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,autonavi.com
+DOMAIN-SUFFIX,apilocate.amap.com
+
+# ==================== 5. 语音呼叫、双向虚拟号与实时音视频 (RTC) ====================
+# 声网 (Agora / 盛网 - 美团骑手 App 内置网络通话及语音对讲)
+DOMAIN-SUFFIX,agora.io
+DOMAIN-SUFFIX,sd-rtn.com
+DOMAIN-SUFFIX,shengwang.cn
+DOMAIN-SUFFIX,agoraio.cn
+# 科大讯飞 (骑手端语音播报、智能语音助手识别与降噪)
+DOMAIN-SUFFIX,iflytek.com
+DOMAIN-SUFFIX,xfyun.cn
+DOMAIN-SUFFIX,voicecloud.cn
+
+# ==================== 6. 微信生态、账号鉴权与微信支付依赖 ====================
 DOMAIN-SUFFIX,qq.com
 DOMAIN-SUFFIX,weixin.qq.com
+DOMAIN-SUFFIX,weixin.com
+DOMAIN-SUFFIX,wechat.com
 DOMAIN-SUFFIX,tenpay.com
 DOMAIN-SUFFIX,gtimg.com
 DOMAIN-SUFFIX,qpic.cn
 DOMAIN-SUFFIX,qlogo.cn
+DOMAIN-SUFFIX,servicewechat.com
 
-DOMAIN-SUFFIX,xfyun.cn
-DOMAIN-SUFFIX,iflytek.com
-DOMAIN-SUFFIX,sd-rtn.com
-DOMAIN-SUFFIX,agora.io
-DOMAIN-SUFFIX,shengwang.cn
-
-DOMAIN-SUFFIX,kuaishou.com
-DOMAIN-SUFFIX,weibo.com
-DOMAIN-SUFFIX,weibo.cn
+# ==================== 7. 支付宝生态与提现/实名认证网关 ====================
 DOMAIN-SUFFIX,alipay.com
 DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,alipaydns.com
+DOMAIN-SUFFIX,aliapp.org
+
+# ==================== 8. 第三方登录与分享依赖 (微博 / 快手) ====================
+DOMAIN-SUFFIX,weibo.com
+DOMAIN-SUFFIX,weibo.cn
+DOMAIN-SUFFIX,sinaimg.cn
+DOMAIN-SUFFIX,kuaishou.com
+DOMAIN-SUFFIX,kwimgs.com
+
+# ==================== 9. 移动端进程与 User-Agent 识别 (Surge / Shadowrocket) ====================
+USER-AGENT,meituan*
+USER-AGENT,Meituan*
+USER-AGENT,MeituanGroup*
+USER-AGENT,MeituanDelivery*
+USER-AGENT,MeituanCrowdsource*
+USER-AGENT,banma*
